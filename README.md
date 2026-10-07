@@ -4,7 +4,7 @@ An end-to-end data analytics project analyzing e-commerce sales, customer behavi
 
 ## 📊 Project Overview
 
-This project analyzes the UCI Online Retail dataset containing transactional data from a UK-based online retailer.
+This project analyzes the **UCI Online Retail Dataset**, containing transactional data from a UK-based online retailer.
 
 The goal is to transform raw transactional data into meaningful business insights related to:
 
@@ -29,7 +29,7 @@ The goal is to transform raw transactional data into meaningful business insight
 
 **Dataset:** UCI Online Retail Dataset
 
-The dataset contains transactional records including:
+The dataset contains **541,909 raw transaction records** with the following fields:
 
 - Invoice Number
 - Stock Code
@@ -40,7 +40,7 @@ The dataset contains transactional records including:
 - Customer ID
 - Country
 
-The dataset contains over 540,000 raw transaction records.
+The dataset covers transactions from **December 2010 to December 2011**.
 
 ## 🛠️ Tools & Technologies
 
@@ -60,14 +60,15 @@ Key steps included:
 
 - Removed duplicate transactions
 - Classified sales and returns
-- Created Revenue column
+- Created a Revenue column
 - Removed non-product transactions
 - Removed records with missing product descriptions
 - Removed zero-price transactions
 - Separated product sales from discount transactions
 - Created customer-level RFM analysis
 - Created monthly sales and return summaries
-- Prepared country and product-level datasets
+- Prepared country-level datasets
+- Prepared product-level datasets
 
 ## 📈 Power BI Dashboard
 
@@ -83,20 +84,20 @@ Provides a high-level view of:
 - Total Invoices
 - Average Order Value
 - Monthly Revenue Trend
-- Top Products
-- Top Countries
+- Top 10 Products by Revenue
+- Top 10 Countries by Revenue
 
 ### 2. Customer Analytics
 
 Analyzes:
 
-- Customer count
+- Customer Count
 - Average Customer Revenue
 - Repeat Customers
 - Top Customer Revenue
 - RFM Customer Segmentation
 - Revenue by RFM Segment
-- Customer distribution
+- Customer Distribution
 
 ### 3. Product & Sales Analysis
 
@@ -106,6 +107,7 @@ Analyzes:
 - Top 10 Products by Quantity
 - Monthly Sales & Returns
 - Monthly Return Revenue
+- Product-level sales performance
 
 ### 4. Geographic Sales Analysis
 
@@ -117,7 +119,7 @@ Analyzes:
 - UK vs International Revenue
 - Country-level sales performance
 
-### 5. Return Analysis
+### 5. Returns Analysis
 
 Analyzes:
 
@@ -129,14 +131,38 @@ Analyzes:
 - Top Products by Return Revenue
 - Detailed Product Return Performance
 
+## 📸 Dashboard Preview
+
+### Executive Overview
+
+![Executive Overview](Screenshots/page1-executive-overview.png)
+
+### Customer Analytics
+
+![Customer Analytics](Screenshots/page2-customer-analytics.png)
+
+### Product & Sales Analysis
+
+![Product & Sales Analysis](Screenshots/page3-product-sales.png)
+
+### Geographic Sales Analysis
+
+![Geographic Sales Analysis](Screenshots/page4-geography-analysis.png)
+
+### Returns Analysis
+
+![Returns Analysis](Screenshots/page5-return-analysis.png)
+
 ## 💡 Key Insights
 
-- The United Kingdom generated the majority of total revenue.
-- A relatively small group of high-value customers contributes a significant portion of customer revenue.
-- Champions represent the most valuable RFM customer segment.
-- Revenue increased significantly during the later months of 2011.
-- Certain products contribute disproportionately to return quantities and return revenue.
-- International markets provide an important secondary source of revenue.
+- Total analyzed revenue was approximately **£9.97M** across **23K+ invoices**.
+- The **United Kingdom** generated the majority of total revenue, making it the dominant market.
+- **Champions** represented the most valuable RFM customer segment and contributed approximately **67.7% of known-customer revenue**.
+- The top customer generated approximately **£278.8K** in revenue.
+- Revenue increased significantly during the later months of 2011, with **November 2011** recording the highest full-month revenue.
+- Returns generated approximately **£497K** in return revenue, representing a return rate of approximately **4.9%**.
+- International markets provided an important secondary source of revenue, led by the **Netherlands, EIRE, Germany, and France**.
+- Product-level analysis highlights a small group of products that contribute significantly to overall revenue and return activity.
 
 ## 📁 Project Structure
 
@@ -144,18 +170,24 @@ Analyzes:
 Ecommerce-Sales-Customer-Analytics/
 │
 ├── data/
-│   └── Online Retail dataset
+│   ├── Online Retail.xlsx
+│   └── processed/
+│       ├── country_summary.csv
+│       ├── customer_rfm.csv
+│       ├── monthly_returns.csv
+│       ├── monthly_revenue.csv
+│       └── product_summary.csv
 │
 ├── python/
 │   └── 01_data_understanding.ipynb
 │
 ├── SQL/
-│   └── SQL analysis queries
+│   └── sales_analysis.sql
 │
 ├── powerbi/
 │   └── Ecommerce_Sales_Customer_Analytics.pbix
 │
-├── screenshots/
+├── Screenshots/
 │   ├── page1-executive-overview.png
 │   ├── page2-customer-analytics.png
 │   ├── page3-product-sales.png
